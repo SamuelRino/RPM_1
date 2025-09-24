@@ -1,0 +1,30 @@
+﻿<Window x:Class="RPM_1.AddArr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPM_1"
+        mc:Ignorable="d"
+        Title="Создание массива" Height="200" Width="300">
+    <Grid Margin="60, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbMasLength" Grid.Row="0" Content="Длина массива" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbMasLength" Grid.Row="1" VerticalAlignment="Center" PreviewKeyDown="NumberOnlyTextBox_PreviewKeyDown" />
+        <Label x:Name="lbRndMax" Grid.Row="2" Content="Максимальные значения" VerticalAlignment="Center"/>
+        <TextBox x:Name="tbRndMax" Grid.Row="3" VerticalAlignment="Center" PreviewKeyDown="NumberOnlyTextBox_PreviewKeyDown" />
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="btnInitialize" VerticalAlignment="Center" Width="60" Content="Создать" Click="btnInitialize_Click"/>
+            <Button Grid.Column="1" x:Name="btnCancel" VerticalAlignment="Center" Width="60" Content="Отмена" Click="btnCancel_Click"/>
+        </Grid>
+    </Grid>
+</Window>

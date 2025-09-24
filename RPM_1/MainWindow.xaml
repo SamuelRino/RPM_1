@@ -1,0 +1,46 @@
+﻿<Window x:Class="RPM_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPM_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.ColumnSpan="5">
+            <MenuItem Header="Файл">
+                <MenuItem x:Name="btnSave" Header="Сохранить" Click="btnSave_Click"/>
+                <MenuItem x:Name="btnOpen" Header="Открыть" Click="btnOpen_Click"/>
+                <MenuItem x:Name="btnExit" Header="Выход" Click="btnExit_Click" />
+            </MenuItem>
+            <MenuItem x:Name="btnInfo" Header="О программе" Click="btnInfo_Click"/>
+        </Menu>
+        <Label Grid.Row="1" Grid.Column="2" Content="Первоначальный массив" HorizontalContentAlignment="Center"/>
+        <DataGrid x:Name="dgInput" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5" CanUserAddRows="False" CellEditEnding="dgInput_CellEditEnding" PreviewKeyDown="NumberOnlyTextBox_PreviewKeyDown" />
+        <Label Grid.Row="3" Grid.Column="2" Content="Отформатированный массив" HorizontalContentAlignment="Center" Margin="-10,0,-10,0"/>
+        <DataGrid x:Name="dgOutput" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Margin="5" CanUserAddRows="False" IsReadOnly="True">
+        </DataGrid>
+        <Button x:Name="btnInitEmpty" Grid.Row="6" Grid.Column="2" Margin="4" Content="Создать" Click="btnInitEmpty_Click"/>
+        <Button x:Name="btnFill" Grid.Row="7" Grid.Column="2" Margin="4" Content="Заполнить" Click="btnFill_Click"/>
+        <Button x:Name="btnClear" Grid.Row="8" Grid.Column="2" Margin="4" Content="Очистить" Click="btnClear_Click"/>
+    </Grid>
+</Window>
